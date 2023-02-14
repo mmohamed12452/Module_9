@@ -37,9 +37,9 @@ function renderLicenseSection(license)
 function generateMarkdown(data)
  {
   
-   return `# 
-       ${data.title}
-       ${badge(data.license)}
+   return `
+      # ${data.title}
+       ${renderLicenseBadge(data.license)}
        ${data.name}
 
   
@@ -49,7 +49,7 @@ function generateMarkdown(data)
        ## Table of Contents 📖
        - [Installation](#installation-⚙️)
        - [Usage](#usage-🎮)
-       ${link(data.license)}
+       ${renderLicenseLink(data.license)}
        - [Test](#tests-🧪)
        - [Credits](#credits-🧑‍🤝‍🧑)
        - [Questions](#questions-🙋)
@@ -61,7 +61,7 @@ function generateMarkdown(data)
        ## Usage 🎮
        ${data.usage}
        
-       ${section(data.license)}
+       ${renderLicenseSection(data.license)}
        
        ## Tests 🧪
        ${data.test}
